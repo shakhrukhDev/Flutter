@@ -18,7 +18,7 @@ class _MyApplicationState extends State<MyApplication> {
 
   @override
   void initState() {
-    Timer.periodic(const Duration(seconds: 5), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if (count > 0) {
           count--;
@@ -41,7 +41,8 @@ class _MyApplicationState extends State<MyApplication> {
         body: Center(
             child: Text(
           '$count',
-          style: const TextStyle(fontSize: 35),
+          style: TextStyle(
+              fontSize: 35, color: count % 2 == 0 ? Colors.black : Colors.red),
         )),
       ),
     );
