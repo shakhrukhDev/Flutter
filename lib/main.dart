@@ -14,20 +14,19 @@ class MyApplication extends StatefulWidget {
 }
 
 class _MyApplicationState extends State<MyApplication> {
-  int count = 0;
+  int count = 100;
 
   @override
   void initState() {
-    Timer.periodic(const Duration(seconds: 10), (timer) {
-    Timer.periodic(const Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 5), (timer) {
       setState(() {
-        count++;
+        if (count > 0) {
+          count--;
+        }
       });
       print('count: $count');
     });
     super.initState();
-  });
-
   }
 
   @override
